@@ -61,7 +61,8 @@ A projekt célja, hogy gyorsan telepíthető és karbantartható legyen, valamin
 
 ## 📊 Rendszerfolyamat
 
-![flowchart.jpg](flowchart.jpg)
+![Untitled](https://github.com/user-attachments/assets/b90f29bd-58c5-48f3-bd24-31660947c774)
+
 
 ---
 
