@@ -1,7 +1,7 @@
 import rospy
 from sensor_msgs.msg import LaserScan
 from . import utils
-
+from atexit import register as areg
 
 process = None
 
@@ -16,4 +16,4 @@ def init(callback):
 
     rospy.loginfo("✅ LIDAR initialized.")
 
-    rospy.spin()
+areg(utils.stop_master)

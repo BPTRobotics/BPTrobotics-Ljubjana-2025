@@ -30,10 +30,13 @@ def reset():
 
 last_reset = 0
 
+from ...control import motor
+
 def safe_reset():
     global last_reset
+    motor.stop()
     now = time.time()
-    if now - last_reset > 2:  # 2 seconds between resets
+    if now - last_reset > 2:
         print("Performing sensor reset...")
         reset()
         last_reset = now
