@@ -1,9 +1,9 @@
-from ..control import servo
-PITCH_SENSITIVITY = 10
-def start():
-    while True:
-        
-        normalized_steer = min(max(-1,PITCH_SENSITIVITY / 10),1)
+from .direction_manager import keep_direction
+from ..control import motor
 
-        servo.steer(normalized_steer)
-        print("Pitch:",pitch)
+def start():
+    motor.set_speed(1)
+    while True:
+        pitch = keep_direction()
+        if pitch is None: motor.stop()
+        else: motor.forward()

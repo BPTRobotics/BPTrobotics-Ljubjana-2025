@@ -21,3 +21,5 @@ def init():
     sensor.enable_feature(BNO_REPORT_ROTATION_VECTOR)
 
 init()
+
+INITIAL_DIRECTION = None

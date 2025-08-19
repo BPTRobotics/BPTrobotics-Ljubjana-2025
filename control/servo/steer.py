@@ -1,4 +1,5 @@
 from .utils import set_angle
+from .setup import MIN, MAX, OFFSET
 
 __angle : float = 0
 
@@ -9,7 +10,19 @@ def steer(direction) -> None:
     
     __angle = direction
     
-    set_angle( 90 * (direction + 1) )
+    unmapped_direction = 90 * (direction + 1)
+
+    constraited_direction = min(MAX, max(MIN, unmapped_direction + OFFSET))
+
+    set_angle( constraited_direction )
+
+    return constraited_direction
     
+def safe_steer(direction):
+    global __angle
+    if round(direction,1) != round(__angle,1):
+        return steer(direction)
+    return None
+
 def get_direction() -> float:
     return __angle

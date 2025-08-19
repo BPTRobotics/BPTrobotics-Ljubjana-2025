@@ -1,4 +1,4 @@
-from .setup import sensor       
+from .setup import sensor, INITIAL_DIRECTION
 from . import utils                  
 from .utils import *        
 from ._reset import reset, safe_reset
