@@ -9,3 +9,6 @@ motor:
 
 servo:
   CHANNEL: 12
+
+gyroscope:
+  pin: 26

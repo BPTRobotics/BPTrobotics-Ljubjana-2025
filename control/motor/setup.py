@@ -1,5 +1,5 @@
 import RPi.GPIO as GPIO
-from configuration import get_config
+from ...configuration import get_config
 
 
 try:

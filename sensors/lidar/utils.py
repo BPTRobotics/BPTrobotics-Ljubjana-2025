@@ -1,6 +1,6 @@
 import math
 
-def extract_distance(angle_deg : int,) -> float:
+def extract_distance(angle_deg : int,msg) -> float:
     """Extracts distance at the specified angle in degrees."""
     idx = int((angle_deg % 360) / (msg.angle_increment * (180 / math.pi)))
     if 0 <= idx < len(msg.ranges):
@@ -14,6 +14,8 @@ import subprocess
 from time import sleep
 import requests
 
+process = None
+
 def test_master() -> bool:
     try:
         requests.get("http://localhost:11311", timeout=0.5)
@@ -21,7 +23,8 @@ def test_master() -> bool:
     except:
         return False
 
-def start_master() -> subprocess.Popen[bytes]:
+def start_master():
+    global process
     process = subprocess.Popen(
         ['roslaunch', 'ydlidar_ros_driver', 'lidar_view.launch'],
         cwd='/home/rpi/ydlidar_ws/src/ydlidar_ros_driver/launch',
@@ -38,9 +41,9 @@ def start_master() -> subprocess.Popen[bytes]:
         sleep(1)
     else:
         print("❌ Failed to detect ROS master.")
-    return process
 
-def stop_master(process : subprocess.Popen[bytes]):
+def stop_master():
+    global process
     try:
         if not process:
             print("No process to terminate.")

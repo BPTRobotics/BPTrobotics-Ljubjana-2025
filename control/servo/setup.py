@@ -1,4 +1,4 @@
-from configuration import get_config
+from ...configuration import get_config
 
 try:
     config = get_config()
