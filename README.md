@@ -1,4 +1,3 @@
-````markdown
 # BPT Robotics – Ljubljana 2025
 
 Ez a projekt a **BPT Robotics** 2025-ös ljubljanai versenyére készült robotrendszer teljes kódját és dokumentációját tartalmazza.  
