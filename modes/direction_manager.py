@@ -8,7 +8,7 @@ def keep_direction():
     
     if pitch is None: return None
     
-    pitch_difference = gyroscope.angle_difference(pitch, gyroscope.INITIAL_DIRECTION)
+    pitch_difference = gyroscope.angle_difference(pitch, gyroscope.INITIAL_DIRECTION.value)
 
     normalized_steer = min(max(-1, pitch_difference / PITCH_SENSITIVITY), 1)
 

@@ -1,5 +1,6 @@
 from ...configuration import get_config
 import time
+from ._calibrate import calibrate
 
 try:
     RST_PIN = get_config()['gyroscope']['pin']
@@ -22,6 +23,8 @@ def reset():
     GPIO.output(RST_PIN,GPIO.HIGH)
     try:
         init()
+        sleep(0.75)
+        calibrate()
     except ValueError:
         print("No I2C Error, sleeping 1s")
         sleep(1)

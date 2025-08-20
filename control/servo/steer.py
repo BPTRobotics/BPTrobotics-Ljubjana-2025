@@ -20,7 +20,7 @@ def steer(direction) -> None:
     
 def safe_steer(direction):
     global __angle
-    if round(direction,1) != round(__angle,1):
+    if round(direction,2) != round(__angle,2):
         return steer(direction)
     return None
 

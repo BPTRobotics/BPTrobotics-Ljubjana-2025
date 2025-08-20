@@ -4,7 +4,7 @@ from ..control import motor
 from time import sleep
 
 def start():
-    gyroscope.INITIAL_DIRECTION += 90
+    gyroscope.INITIAL_DIRECTION.value += 90
     pitch_difference = 999
 
     motor.set_speed(1)

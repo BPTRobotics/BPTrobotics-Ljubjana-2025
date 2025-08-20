@@ -7,6 +7,8 @@ from adafruit_bno08x import (
     BNO_REPORT_ROTATION_VECTOR
 )
 
+from ctypes import c_float
+
 i2c = None
 sensor = None
 def init():
@@ -22,4 +24,4 @@ def init():
 
 init()
 
-INITIAL_DIRECTION = None
+INITIAL_DIRECTION = c_float(float("inf"))
