@@ -1,3 +1,4 @@
+
 # BPT Robotics – Ljubljana 2025
 
 Ez a projekt a **BPT Robotics** 2025-ös ljubljanai versenyére készült robotrendszer teljes kódját és dokumentációját tartalmazza.  
@@ -34,7 +35,7 @@ A projekt célja, hogy gyorsan telepíthető és karbantartható legyen, valamin
    ```bash
    git clone https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025.git
    cd BPTrobotics-Ljubjana-2025
-````
+
 
 2. Függőségek telepítése:
 
