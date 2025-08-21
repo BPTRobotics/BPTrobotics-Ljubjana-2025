@@ -6,7 +6,7 @@ import rospy
 import signal
 import sys
 
-ROUNDS = 3
+ROUNDS = 1/4
 
 def cleanup():
     print("Cleaning up: stopping motors, servos, ROS, GPIO...")
@@ -30,15 +30,20 @@ signal.signal(signal.SIGTERM, signal_handler)
 gyroscope.calibrate()
 gyroscope.INITIAL_DIRECTION.value = gyroscope.get_safe_pitch()
 
-
 try:
-    for _ in range(ROUNDS*4):
+    modes.mode1()
+    modes.detect_direction()
+    modes.mode2()
+    for rnd in range(int(ROUNDS * 4 - 1)):
         modes.mode1()
         modes.mode2()
 
-        print(ROUNDS,"round has succesfully completed. 🚩")
-except Exception as e:
-    print(f"Exception occurred: {e}")
+        print(rnd,"round has succesfully completed. 🚩")
+    
+    modes.mode1(modes.lidar_manager.START_DISTANCE.value)
+except Exception:
+    import traceback
+    traceback.print_exc()
     cleanup()
     sys.exit(1)
 

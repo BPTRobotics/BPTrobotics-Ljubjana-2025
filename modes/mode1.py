@@ -10,16 +10,14 @@ def callback(__msg):
     msg = __msg
 lidar.setup.init(callback)
 
-DISTANCE_= .75
 
-def start():
+def start(DISTANCE_ = .7):
     global msg
     motor.set_speed(1)
     distance = 0
 
     while True:
         pitch_diff = keep_direction()
-        motor.forward()
         if pitch_diff is None: motor.stop()
         else: motor.backward()
 
@@ -34,3 +32,4 @@ def start():
             break
 
         sleep(0.05)
+    motor.stop()
