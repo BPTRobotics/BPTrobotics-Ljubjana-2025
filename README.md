@@ -55,7 +55,7 @@ The core of the concept is the modular structure: any component can be quickly r
 ![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/robots/Robot%20Casual%20(4).jpg)![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/robots/Robot%20Casual%20(3).jpg)
 
 ## 4. Hardware details
-[here comes the electronic picture that batteries -> bucks -> …]
+![Circuit photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Untitled%20(1).jpg)
 | Component             | Function                                                       | Comment                  | Justification                                                                 |
 |-----------------------|----------------------------------------------------------------|--------------------------|-------------------------------------------------------------------------------|
 | Raspberry Pi 4 (4GB)  | Central control, data processing                               | Running Python code      | It's proven, it works well, although it's a bit slow, so we plan to switch to Pi5 next year. |
@@ -68,7 +68,8 @@ The core of the concept is the modular structure: any component can be quickly r
 
 
 ## 5. Software architecture
-[here you can find out how the sensors communicate with the pi]
+
+![Sensor circuit photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Untitled%20(3).jpg)
 Our developer decided to try a new approach into the sensor combination, which he called the **"module system"**, where he splits the software into different modules.
 
 For example, when  the robot starts, it uses the lidar for navigation of distances and gyroscope to ensure the full forward direction he calls this state **"module 1"**. Then, when the robot approaches a corner, and needs to change its direction, then it turns off the lidar (since there's no need for that), and turns by only the data of the gyroscope. That state is called **"module 2"**. Then it changes between these modules.
