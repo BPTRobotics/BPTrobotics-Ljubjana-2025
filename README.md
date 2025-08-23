@@ -1,7 +1,7 @@
 
-# BPT Robotics – Engineering Documentation
+# BPT Robotics – Engineering Documentation 
 
-
+![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/Team/Very%20very%20Serious%20Team%20Photo.jpg)
 
 
 WRO Future Engineers – Slovenia 2025
@@ -67,27 +67,34 @@ Our developer decided to try a new approach into the sensor combination, which h
 For example, when  the robot starts, it uses the lidar for navigation of distances and gyroscope to ensure the full forward direction he calls this state **"module 1"**. Then, when the robot approaches a corner, and needs to change its direction, then it turns off the lidar (since there's no need for that), and turns by only the data of the gyroscope. That state is called **"module 2"**. Then it changes between these modules.
 
 ### **Modules:**
-##### **OPEN CHALLENGE's modules:**
+![OPEN CHALLENGE](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Sprint%20Planning%20-%20OPEN.jpg)
+![OBSTACLE CHALLENGE](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Sprint%20Planning%20-%20OBSTACLE.jpg)
 
+##### **OPEN CHALLENGE's modules:**
+![Module 1](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Sprint%20Planning%20-%20Module%201.jpg)
+![Nodule 2](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Sprint%20Planning%20-%20Module%202.jpg)
 ##### **OBSTACLE CHALLENGE's modules:**
+![Module 3](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Sprint%20Planning%20-%20Module%203.jpg)
+![Module 4](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/else/Sprint%20Planning%20-%20Module%203.jpg)
+<sub>
 ```
 read LIDAR distance
 read camera color
 read gyro heading
 
 IF obstacle detected (distance < safe_limit):
-IF camera sees red:
-turn left
-ELSE IF camera sees blue:
-turn right
+    IF camera sees red:
+        turn left
+    ELSE IF camera sees blue:
+        turn right
+    ELSE:
+        stop, then go around slowly
 ELSE:
-stop, then go around slowly
-ELSE:
-move forward straight
+    move forward straight
 
 correct direction with gyro
 ```
-
+</sub>
 
 ### **Download the repository**
 **Clone the repository:**
