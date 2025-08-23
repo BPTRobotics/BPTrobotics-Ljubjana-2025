@@ -5,13 +5,16 @@ from time import sleep
 from ..sensors.gyroscope import INITIAL_DIRECTION
 from . import lidar_manager
 
+from ..Button import wait_for_button_press
 
-def start(DISTANCE_ = 1.1):
+
+def start(DISTANCE_ = .75):
     global lidar_manager
     motor.set_speed(1)
     distance = 0
 
     while True:
+        wait_for_button_press()
         pitch_diff = keep_direction()
         if pitch_diff is None: motor.stop()
         else: motor.backward()

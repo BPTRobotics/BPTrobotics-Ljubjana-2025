@@ -3,12 +3,19 @@ from ..sensors import gyroscope
 
 PITCH_SENSITIVITY = 20
 
-def keep_direction():
+def get_pitch_difference():
+    
     pitch = gyroscope.get_safe_pitch()
     
     if pitch is None: return None
+
+    return gyroscope.angle_difference(pitch, gyroscope.INITIAL_DIRECTION.value)
+
+def keep_direction():
     
-    pitch_difference = gyroscope.angle_difference(pitch, gyroscope.INITIAL_DIRECTION.value)
+    pitch_difference = get_pitch_difference()
+    if pitch_difference is None:
+        return None
 
     normalized_steer = min(max(-1, pitch_difference / PITCH_SENSITIVITY), 1)
 

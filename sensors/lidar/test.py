@@ -22,3 +22,6 @@ def default_callback(msg):
 from . import setup
 
 setup.init(default_callback)
+
+import rospy
+rospy.spin()

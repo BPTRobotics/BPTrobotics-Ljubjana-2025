@@ -3,6 +3,7 @@ from ..sensors import gyroscope
 from ..control import motor
 from time import sleep
 from . import _detect_direction
+from ..Button import wait_for_button_press
 
 def start():
     gyroscope.INITIAL_DIRECTION.value += 90 *  _detect_direction.DIRECTION.value
@@ -11,6 +12,7 @@ def start():
     motor.set_speed(1)
     motor.backward()
     while abs(pitch_difference or 3) > 3:
+        wait_for_button_press()
         pitch_difference = keep_direction()
         if pitch_difference is not None:
             motor.backward()
