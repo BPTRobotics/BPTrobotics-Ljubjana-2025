@@ -1,8 +1,6 @@
 
 # BPT Robotics – Engineering Documentation 
 
-![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/Team/Very%20very%20Serious%20Team%20Photo.jpg)
-
 
 WRO Future Engineers – Slovenia 2025
 
@@ -25,6 +23,8 @@ Peti is a master of mechanical design and structural engineering, ensuring a sta
 Tibi is an expert in precision electronics connections, ensuring that all hardware components communicate seamlessly and receive the proper power supply.
 Our robot performed well in the Hungarian qualifiers, and thanks to this, we qualified for the 2025 WRO competition in Slovenia. Our goal is to present a technological solution that shows that anything can be achieved with a small team and limited resources. Although the Hungarian round did not start absolutely smoothly, we managed to make it to Slovenia. Gathering our experience from the competition, we rethought the entire robot and redesigned it in less than 3 months. Our motivation is to create a better world for our future children and grandchildren, so that we can participate in such big events of robotics at a young age.
 
+![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/Team/Very%20very%20Serious%20Team%20Photo.jpg)
+
 ## 2. The task
 The challenge for the WRO Future Engineers category is to develop a fully autonomous robot that can navigate a changing obstacle course without human intervention. The robot:
 must independently explore their environment,
@@ -33,6 +33,9 @@ must make decisions based on visual cues (such as color codes and walls),
 you need to reach your destination via the shortest and most efficient route possible.
 This task is a mechanical, electronic and software development challenge at the same time, as the robot has to process and react to complex data in real time. Another challenge during the preparation was that the robot had to be within a certain limit (300 x 200 x 300 mm) and could not exceed a weight limit of 1.5 kg. We started the work after a thorough planning. Initially, we thought about the structure and operation of the robot based on the experience gained so far. Later, Boldizsár started to do the programming part and integrate the software with the appropriate operating system. Initially, he did the Open challenge, refined it, and developed it, and when it worked perfectly, he supplemented it with the Obstacle challenge. After a lot of testing, our robot was created.
 
+
+![Robot photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/robots/Robot%20Casual%20(6).jpg)
+
 ## 3. Robot concept
 Our robot is a four-wheeled, back-wheel drive, back-wheel steering platform that we designed to be stable, modular, and easy to repair.
 The main goal was to create a system that is capable of real-time decision-making with minimal latency. Our robot, has both a driven and steered rear axle, allowing for the most precise maneuvering possible.
@@ -40,12 +43,16 @@ Therefore, the main control unit is a Raspberry Pi 4 4GB model B, which runs the
 
 **Main features of the system:**
 - **Husky Lens** camera for fast color recognition.
-- YDLIDAR X4 Pro for 360° environmental mapping, which provides accurate data up to a distance of 10 meters. (which is enough)
+- **YDLIDAR X4 Pro** for 360° environmental mapping, which provides accurate data up to a distance of 10 meters. (which is enough)
 - **GY-BNO085** IMU for precise heading and movement correction.
 - **L298N** motor controller, which controls the drive motor with PWM control.
 - **PCA9685**, this rotates our drive shaft for precise maneuvering
 
+
 The core of the concept is the modular structure: any component can be quickly replaced, and the frame design allows for later expansions (for example, installing more powerful motors or new sensors).
+
+
+![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/robots/Robot%20Casual%20(4).jpg)![Team photo](https://github.com/BPTRobotics/BPTrobotics-Ljubjana-2025/blob/main/img/robots/Robot%20Casual%20(3).jpg)
 
 ## 4. Hardware details
 [here comes the electronic picture that batteries -> bucks -> …]
